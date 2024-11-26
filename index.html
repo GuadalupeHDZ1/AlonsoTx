@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portada - Transmisión de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Portada -->
+    <div id="portada">
+        <img src="imagenes/imagen1.png" alt="Logo Izquierdo" class="logo logo-izquierda">
+        <img src="imagenes/imagen2.png" alt="Logo Derecho" class="logo logo-derecha">
+        <h1>Universidad Autónoma del Estado de México</h1>
+        <h2>Centro Universitario Zumpango</h2>
+        <h2>Ingeniería en Computación</h2>
+        <h2>Transmisión de Datos</h2>
+        <p>Alonso Issmael Urrieta Rangel</p>
+        <p>Maria Guadalupe Hernandez Almaguer</p>
+        <button onclick="goToDataPage()">Aceptar</button>
+    </div>
+
+    <!-- Página de transmisión de datos -->
+    <div id="transmision" style="display: none;">
+        <h2>Transmisión de Datos</h2>
+        <label for="bits">Ingresa una cadena de bits (máximo 12):</label>
+        <input type="text" id="bits" maxlength="12" placeholder="Ejemplo: 110010101011">
+        <button onclick="drawSignals()">Mostrar Codificaciones</button>
+        
+        <!-- Leyenda de codificaciones -->
+        <div class="legend-container">
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #1E90FF;"></div>
+                <div class="legend-text">NRZI</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #FF6347;"></div>
+                <div class="legend-text">Manchester</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #32CD32;"></div>
+                <div class="legend-text">Manchester Dif.</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #8A2BE2;"></div>
+                <div class="legend-text">AMI</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color-box" style="background-color: #FF8C00;"></div>
+                <div class="legend-text">Pseudoternario</div>
+            </div>
+        </div>
+
+        <!-- Canvas para el gráfico -->
+        <div class="canvas-container">
+            <canvas id="encodingChart" width="1000" height="500"></canvas>
+        </div>
+    </div>
+    <script>
+        function goToDataPage() {
+            document.getElementById('portada').style.display = 'none';
+            document.getElementById('transmision').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

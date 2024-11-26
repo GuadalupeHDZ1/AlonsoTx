@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    flex-direction: column;
+}
+
+#portada {
+    width: 90%;
+    max-width: 1000px;
+    background-color: #54c789;
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+/* Ajuste de posición de los logos en las esquinas */
+.logo {
+    width: 80px;
+    height: auto;
+    position: absolute;
+}
+
+.logo-izquierda {
+    top: 10px;
+    left: 10px;
+}
+
+.logo-derecha {
+    top: 10px;
+    right: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-top: 100px; /* Espacio extra para los logos */
+    color: #333;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1em;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+#output {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    #portada {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .logo {
+        width: 50px; /* Reducir tamaño de logos en móvil */
+    }
+
+    h1 {
+        font-size: 1.8em;
+        margin-top: 60px;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 10px 15px;
+    }
+
+    input {
+        font-size: 0.9em;
+    }
+
+    #encodingChart {
+        height: 300px;
+    }
+}
+
+/* Media Query para pantallas medianas (tabletas) */
+@media (min-width: 600px) and (max-width: 1024px) {
+    #portada {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 11px 22px;
+    }
+
+    #encodingChart {
+        height: 350px;
+    }
+}
+
+/* Media Query para pantallas grandes (escritorios y laptops) */
+@media (min-width: 1024px) {
+    body {
+        height: auto;
+        margin: 20px;
+    }
+
+    #portada {
+        padding: 40px;
+        width: 80%;
+        margin-top: 40px;
+    }
+
+    .logo {
+        width: 90px; /* Tamaño adecuado para los logos en pantallas grandes */
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin-top: 100px;
+    }
+
+    #encodingChart {
+        height: 450px;
+    }
+}
+
+/* Estilos generales para el gráfico */
+.canvas-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 90%;
+    max-width: 1000px;
+}
+
+#encodingChart {
+    border: 2px solid #aaa;
+    border-radius: 12px;
+    background-color: #f9f9f9;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    margin-top: 20px;
+    width: 100%;
+}
+
+#encodingChart .line {
+    line-width: 3px;
+    opacity: 0.8;
+}
+
+.legend-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    padding: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 15px;
+}
+
+.legend-color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-text {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
